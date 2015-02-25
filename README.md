@@ -11,7 +11,31 @@
 
 *   [Solarized][solarized] - very very beautiful color scheme
 
+## Installation (ubuntu)
 
+Backup your own vim files
+    
+    mv /etc/vim/vimrc /etc/vim/vimrc.bak
+    mv /etc/vim/vimrc.local /etc/vim/vimrc.local.bak
+    mv ~/.vim/ ~/.vim.bak/
+
+Clone this repository
+
+    git clone git@github.com:xujqiao/vimrc.git .vim
+
+Create link for vimrc, vimrc.local
+
+    ln -s .vim/vimrc /etc/vim/vimrc
+    ln -s .vim/vimrc.local /etc/vim/vimrc.local
+
+Install the Plugins
+
+    vim
+    :PluginInstall
+
+## Key Bindings
+
+*   F5 -> Toggle NerdTree file viewer
 
 
 
