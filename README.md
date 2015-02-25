@@ -7,6 +7,9 @@
 *   [Surround][surround] - quoting/parenthesizing made simple
 *   [NerdTree][nerdTree] - tree explorer files plugin
 
+## Themes
+
+*   [Solarized][solarized] - very very beautiful color scheme
 
 
 
@@ -21,6 +24,8 @@
 
 
 
+
+ [solarized]: http://ethanschoonover.com/solarized "solarized"
 
  [vundle]: https://github.com/gmarik/Vundle.vim "vundle"
  [surround]: https://github.com/tpope/vim-surround "surround"
