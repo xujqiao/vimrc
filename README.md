@@ -44,8 +44,8 @@ Install the Plugins
     
     1.  Lanch the terminal(Ctrl+Alt+t)
     2.  In the menu, **Edit->Profile Preferences->Colors**. Unchecked the '**Use colors from system theme**' and select one item you like in '**Built-in schemes**', just below previous menu
-    3.  Click Close button
-    4.  Type 'vim' and enjoy the solarized:)
+    3.  Click **Close** button
+    4.  Type '**vim**' and enjoy the solarized:)
 
 
 
