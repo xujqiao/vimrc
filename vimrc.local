@@ -1,1 +1,102 @@
-/etc/vim/vimrc.local
+" use vim syntax
+set nocompatible
+
+" """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => Vundle begin
+" """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+filetype off
+
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+source ~/.vim/vimrc.bundles
+call vundle#end()
+
+filetype plugin indent on
+
+
+" """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => Solarized begin
+" """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+syntax enable
+syntax on
+if has('gui_running')
+	set t_Co=16
+	let g:solarized_termcolors=16
+	set background=dark
+else
+	set t_Co=256
+	let g:solarized_termcolors=256
+	set background=light
+endif
+colorscheme solarized
+
+
+" """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => General
+" """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" set the line number
+set nu
+
+" more powerful backspacing
+set backspace=indent,eol,start
+
+" fast saving and quiting
+nmap <leader>w :w!<cr>
+nmap <leader>q :q!<cr>
+
+" set tab for 4 spaces
+set ts=4
+set expandtab
+set autoindent
+
+" """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => VIM user interface
+" """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" set 7 lines to the cursor - when moving vertically using j/k
+set so=7
+
+" set ruler and command bar
+set ruler
+set cmdheight=2
+
+" search setting
+set ignorecase
+set smartcase
+set hlsearch
+set incsearch
+
+" for regular expressions turn magic on
+set magic
+
+" show matching brackets when text indicator is over them
+set showmatch
+" how many tenths of a second to blink when matching brackets
+set mat=2
+
+" """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => files, backups and undo
+" """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" turn backup off
+set nobackup
+set nowb
+set noswapfile
+
+
+
+" """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => Moving around, windows and buffers
+" """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" smart way to move between windows
+map <C-j> <C-W>j
+map <C-k> <C-W>k
+map <C-h> <C-W>h
+map <C-l> <C-W>l
+
+
+
+
+" """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => Plugin configure
+" """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" nerdtree
+nmap <F5> :NERDTree<cr>
