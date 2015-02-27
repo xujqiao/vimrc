@@ -19,11 +19,12 @@ Backup your own vim files
 
 Clone this repository
 
-    git clone git@github.com:xujqiao/vimrc.git .vim
+    git clone git@github.com:xujqiao/vimrc.git ~/.vim
+    git clone https://github.com/gmarik/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 
 Create link for vimrc, vimrc.local
 
-    ln -s .vim/vimrc.local .vim/vimrc
+    ln -s ~/.vim/vimrc.local ~/.vim/vimrc
 
 Install the Plugins
 
