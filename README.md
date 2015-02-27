@@ -15,8 +15,6 @@
 
 Backup your own vim files
     
-    mv /etc/vim/vimrc /etc/vim/vimrc.bak
-    mv /etc/vim/vimrc.local /etc/vim/vimrc.local.bak
     mv ~/.vim/ ~/.vim.bak/
 
 Clone this repository
@@ -25,8 +23,7 @@ Clone this repository
 
 Create link for vimrc, vimrc.local
 
-    ln -s .vim/vimrc /etc/vim/vimrc
-    ln -s .vim/vimrc.local /etc/vim/vimrc.local
+    ln -s .vim/vimrc.local .vim/vimrc
 
 Install the Plugins
 
