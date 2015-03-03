@@ -64,3 +64,4 @@ Install the Plugins
  [vundle]: https://github.com/gmarik/Vundle.vim "vundle"
  [surround]: https://github.com/tpope/vim-surround "surround"
  [nerdTree]: https://github.com/scrooloose/nerdtree "nerdTree"
+ [taglist]: https://github.com/vim-scripts/taglist.vim "taglist"
