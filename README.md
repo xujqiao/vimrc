@@ -6,6 +6,7 @@
 *   [Vundle][vundle] - an excellent vim plugin management tool
 *   [Surround][surround] - quoting/parenthesizing made simple
 *   [NerdTree][nerdTree] - tree explorer files plugin
+*   [Taglist][taglist] - taglist
 
 ## Themes
 
@@ -28,13 +29,14 @@ Create link for vimrc, vimrc.local
 
 Install the Plugins
 
+    sudo apt-get install ctags
     vim
     :PluginInstall
 
 ## Key Bindings
 
 *   F5 -> Toggle NerdTree file viewer
-
+*   F4 -> Toggle Taglist
 
 ## Bonus
 
@@ -45,7 +47,7 @@ Install the Plugins
     3.  Click **Close** button
     4.  Type '**vim**' and enjoy the solarized:)
 
-
+*   If you want to use the taglist to see the structure of your file. You need to run this command in your directory, which is 'ctags -R'. Then open a file in vim and press F4, you can see them.
 
 
 
