@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <meta name="viewport" content="width=640">
+
+    <link rel="stylesheet" href="stylesheets/core.css" media="screen">
+    <link rel="stylesheet" href="stylesheets/mobile.css" media="handheld, only screen and (max-device-width:640px)">
+    <link rel="stylesheet" href="stylesheets/pygment_trac.css">
+
+    <script type="text/javascript" src="javascripts/modernizr.js"></script>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+    <script type="text/javascript" src="javascripts/headsmart.min.js"></script>
+    <script type="text/javascript">
+      $(document).ready(function () {
+        $('#main_content').headsmart()
+      })
+    </script>
+    <title>Vimrc by xujqiao</title>
+  </head>
+
+  <body>
+    <a id="forkme_banner" href="https://github.com/xujqiao/vimrc">View on GitHub</a>
+    <div class="shell">
+
+      <header>
+        <span class="ribbon-outer">
+          <span class="ribbon-inner">
+            <h1>Vimrc</h1>
+            <h2>my vim configuration</h2>
+          </span>
+          <span class="left-tail"></span>
+          <span class="right-tail"></span>
+        </span>
+      </header>
+
+      <section id="downloads">
+        <span class="inner">
+          <a href="https://github.com/xujqiao/vimrc/zipball/master" class="zip"><em>download</em> .ZIP</a><a href="https://github.com/xujqiao/vimrc/tarball/master" class="tgz"><em>download</em> .TGZ</a>
+        </span>
+      </section>
+
+
+      <span class="banner-fix"></span>
+
+
+      <section id="main_content">
+        <h1>
+<a id="candys-vim-config-file" class="anchor" href="#candys-vim-config-file" aria-hidden="true"><span class="octicon octicon-link"></span></a>Candy's VIM config file</h1>
+
+<blockquote>
+<p>Author: Candy Heo</p>
+</blockquote>
+
+<h2>
+<a id="bundle-plugins" class="anchor" href="#bundle-plugins" aria-hidden="true"><span class="octicon octicon-link"></span></a>Bundle Plugins</h2>
+
+<ul>
+<li>  <a href="https://github.com/gmarik/Vundle.vim" title="vundle">Vundle</a> - an excellent vim plugin management tool</li>
+<li>  <a href="https://github.com/tpope/vim-surround" title="surround">Surround</a> - quoting/parenthesizing made simple</li>
+<li>  <a href="https://github.com/scrooloose/nerdtree" title="nerdTree">NerdTree</a> - tree explorer files plugin</li>
+<li>  <a href="https://github.com/vim-scripts/taglist.vim" title="taglist">Taglist</a> - taglist</li>
+</ul>
+
+<h2>
+<a id="themes" class="anchor" href="#themes" aria-hidden="true"><span class="octicon octicon-link"></span></a>Themes</h2>
+
+<ul>
+<li>  <a href="http://ethanschoonover.com/solarized" title="solarized">Solarized</a> - very very beautiful color scheme</li>
+</ul>
+
+<h2>
+<a id="installation-ubuntu" class="anchor" href="#installation-ubuntu" aria-hidden="true"><span class="octicon octicon-link"></span></a>Installation (ubuntu)</h2>
+
+<p>Backup your own vim files</p>
+
+<pre><code>mv ~/.vim/ ~/.vim.bak/
+</code></pre>
+
+<p>Clone this repository</p>
+
+<pre><code>git clone https://github.com/xujqiao/vimrc.git ~/.vim
+git clone https://github.com/gmarik/Vundle.vim.git ~/.vim/bundle/Vundle.vim
+</code></pre>
+
+<p>Create link for vimrc, vimrc.local</p>
+
+<pre><code>ln -s ~/.vim/vimrc.local ~/.vim/vimrc
+</code></pre>
+
+<p>Install the Plugins</p>
+
+<pre><code>sudo apt-get install ctags
+vim
+:PluginInstall
+</code></pre>
+
+<h2>
+<a id="key-bindings" class="anchor" href="#key-bindings" aria-hidden="true"><span class="octicon octicon-link"></span></a>Key Bindings</h2>
+
+<ul>
+<li>  F5 -&gt; Toggle NerdTree file viewer</li>
+<li>  F4 -&gt; Toggle Taglist</li>
+</ul>
+
+<h2>
+<a id="bonus" class="anchor" href="#bonus" aria-hidden="true"><span class="octicon octicon-link"></span></a>Bonus</h2>
+
+<ul>
+<li>
+<p>Fix the incorrect display in vim when setting scheme solarized in vim</p>
+
+<ol>
+<li> Lanch the terminal(Ctrl+Alt+t)</li>
+<li> In the menu, <strong>Edit-&gt;Profile Preferences-&gt;Colors</strong>. Unchecked the '<strong>Use colors from system theme</strong>' and select one item you like in '<strong>Built-in schemes</strong>', just below previous menu</li>
+<li> Click <strong>Close</strong> button</li>
+<li> Type '<strong>vim</strong>' and enjoy the solarized:)</li>
+</ol>
+</li>
+<li><p>If you want to use the taglist to see the structure of your file. You need to run this command in your directory, which is 'ctags -R'. Then open a file in vim and press F4, you can see them.</p></li>
+</ul>
+      </section>
+
+      <footer>
+        <span class="ribbon-outer">
+          <span class="ribbon-inner">
+            <p>this project by <a href="https://github.com/xujqiao">xujqiao</a> can be found on <a href="https://github.com/xujqiao/vimrc">GitHub</a></p>
+          </span>
+          <span class="left-tail"></span>
+          <span class="right-tail"></span>
+        </span>
+        <p>Generated with <a href="http://pages.github.com">GitHub Pages</a> using Merlot</p>
+        <span class="octocat"></span>
+      </footer>
+
+    </div>
+
+    
+  </body>
+</html>
