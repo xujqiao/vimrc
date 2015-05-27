@@ -84,3 +84,6 @@ Install the Plugins
  [multipleCursor]: https://github.com/terryma/vim-multiple-cursors "multiple-cursors"
  [autoClose]: https://github.com/Townk/vim-autoclose "autoClose"
  [fugitive]: https://github.com/tpope/vim-fugitive "fugitive"
+ [jedi]: https://github.com/davidhalter/jedi "jedi"
+ [easyMotion]: https://github.com/Lokaltog/vim-easymotion "easyMotion"
+ [vimium]: https://chrome.google.com/webstore/search/vimium?utm_source=chrome-ntp-icon "vimium"
