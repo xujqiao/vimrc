@@ -41,7 +41,9 @@ set nu
 set backspace=indent,eol,start
 
 " fast saving
+" the <leader> is backslash as default
 nmap <leader>w :w!<cr>
+nmap <leader>q :q!<cr>
 
 " set tab for 4 spaces
 set smarttab
@@ -52,9 +54,6 @@ set autoindent
 
 nmap <F6> :%!python -m json.tool<cr>
 
-" easy to see tabs and spaces
-set list
-set listchars=tab:▸\ 
 
 if has("autocmd")
     " When editing a file, always jump to the last cursor position
@@ -63,7 +62,7 @@ if has("autocmd")
     \   exe "normal g'\"" |
     \ endif
     " Set tabs and spaces for html, css and js
-    autocmd BufNewFile,BufRead *.html, *htm, *.css, *.js set noexpandtab tabstop=2 shiftwidth=2
+    " autocmd BufNewFile,BufReadPost *.html, *htm, *.css, *.js set noexpandtab tabstop=2 shiftwidth=2
 endif
 
 " """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -73,8 +72,9 @@ endif
 set so=7
 
 " set ruler and command bar
-set ruler
-set cmdheight=2
+" set ruler
+" set cmdheight=2
+set laststatus=2
 
 " search setting
 set ignorecase
@@ -126,4 +126,18 @@ let Tlist_GainFocus_On_ToggleOpen = 1  "打开taglist时，光标保留在taglis
 let Tlist_Ctags_Cmd='/usr/bin/ctags'  "设置ctags命令的位置
 nmap <F4> :Tlist<cr>        " 设置关闭和打开taglist窗口的快捷键
 
+" syntastic
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
 
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
+
+" quick run
+nmap <C-b> :QuickRun<cr>
+
+" syntastic
+let g:syntastic_ignore_files=[".*\.py$"]
