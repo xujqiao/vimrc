@@ -1,3 +1,6 @@
 *.[oa]
 *~
 *.markdown
+vimrc
+bundle/
+.netrwhist

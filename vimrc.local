@@ -45,6 +45,10 @@ set backspace=indent,eol,start
 nmap <leader>w :w!<cr>
 nmap <leader>q :q!<cr>
 
+" font
+set guifont=Source\ Code\ Pro\ Semi-Bold
+
+
 " set tab for 4 spaces
 set smarttab
 set tabstop=4
@@ -53,6 +57,10 @@ set expandtab
 set autoindent
 
 nmap <F6> :%!python -m json.tool<cr>
+
+" set paste and nopaste
+set pastetoggle=<F9>
+
 
 
 if has("autocmd")
@@ -90,15 +98,16 @@ set showmatch
 " how many tenths of a second to blink when matching brackets
 set mat=2
 
-" """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" => files, backups and undo
-" """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" files, backups and undo
 " turn backup off
 set nobackup
 set nowb
 set noswapfile
 
-
+" encoding
+set fileencodings=utf-8,ucs-bom,gb18030,gbk,gb2312,cp936 " vim probe the file with list of fileencodings
+set termencoding=utf-8 " terminal encoding
+set encoding=utf-8 " encoding of buffer and menu
 
 " """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Moving around, windows and buffers
@@ -110,6 +119,14 @@ map <C-h> <C-W>h
 map <C-l> <C-W>l
 
 
+" window size
+nmap <Left> <C-W><
+nmap <Right> <C-W>>
+nmap <Up> <C-W>+
+nmap <Down> <C-W>-
+
+nmap <C-Left> gT
+nmap <C-Right> gt
 
 
 " """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -141,3 +158,19 @@ nmap <C-b> :QuickRun<cr>
 
 " syntastic
 let g:syntastic_ignore_files=[".*\.py$"]
+
+" indent
+" 随 vim 自启动
+let g:indent_guides_enable_on_vim_startup=1
+" 从第二层开始可视化显示缩进
+let g:indent_guides_start_level=2
+" 色块宽度
+let g:indent_guides_guide_size=1
+" 快捷键 i 开/关缩进可视化
+nmap <silent> <Leader>i <Plug>IndentGuidesToggle
+
+" a.vim
+" *.cpp 和 *.h 间切换
+nmap <Leader>ch :A<CR>
+" 子窗口中显示 *.cpp 或 *.h
+nmap <Leader>sch :AS<CR>
