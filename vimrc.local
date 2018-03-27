@@ -28,7 +28,7 @@ else
 	let g:solarized_termcolors=256
 	set background=light
 endif
-colorscheme solarized
+" colorscheme solarized
 
 
 " """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -56,7 +56,7 @@ set shiftwidth=4
 set expandtab
 set autoindent
 
-nmap <F6> :%!python -m json.tool<cr>
+nmap <F8> :TagbarToggle<CR>
 
 " set paste and nopaste
 set pastetoggle=<F9>
@@ -133,7 +133,14 @@ nmap <C-Right> gt
 " => Plugin configure
 " """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " nerdtree
-nmap <F5> :NERDTree<cr>
+nmap <F5> :NERDTreeToggle<cr>
+" 在 vim 启动的时候默认开启 NERDTree（autocmd 可以缩写为 au）
+autocmd VimEnter * NERDTree
+" 鼠标默认在右边
+wincmd w
+autocmd VimEnter * wincmd w
+" 自动退出
+autocmd BufEnter * if 0 == len(filter(range(1, winnr('$')), 'empty(getbufvar(winbufnr(v:val), "&bt"))')) | qa! | endif
 
 " taglist
 let Tlist_Show_One_File = 1            "只显示当前文件的taglist，默认是显示>    多个
@@ -153,12 +160,6 @@ let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
 
-" quick run
-nmap <C-b> :QuickRun<cr>
-
-" syntastic
-let g:syntastic_ignore_files=[".*\.py$"]
-
 " indent
 " 随 vim 自启动
 let g:indent_guides_enable_on_vim_startup=1
@@ -173,4 +174,28 @@ nmap <silent> <Leader>i <Plug>IndentGuidesToggle
 " *.cpp 和 *.h 间切换
 nmap <Leader>ch :A<CR>
 " 子窗口中显示 *.cpp 或 *.h
-nmap <Leader>sch :AS<CR>
+nmap <Leader>sch :AV<CR>
+
+let g:airline_powerline_fonts = 1 
+
+" ctrlp
+let g:ctrlp_map = '<c-p>' 
+let g:ctrlp_cmd = 'CtrlP'
+" 设置过滤不进行查找的后缀名 
+let g:ctrlp_custom_ignore = '\v[\/]\.(git|hg|svn|pyc)$' 
+
+" easy-motion
+" <Leader>f{char} to move to {char}
+map  <Leader>f <Plug>(easymotion-bd-f)
+nmap <Leader>f <Plug>(easymotion-overwin-f)
+
+" s{char}{char} to move to {char}{char}
+nmap s <Plug>(easymotion-overwin-f2)
+
+" Move to line
+map <Leader>L <Plug>(easymotion-bd-jk)
+nmap <Leader>L <Plug>(easymotion-overwin-line)
+
+" Move to word
+map  <Leader>w <Plug>(easymotion-bd-w)
+nmap <Leader>w <Plug>(easymotion-overwin-w)
