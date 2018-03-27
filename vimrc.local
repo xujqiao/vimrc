@@ -126,12 +126,12 @@ nmap <C-Right> gt
 " nerdtree
 nmap <F5> :NERDTreeToggle<cr>
 " 在 vim 启动的时候默认开启 NERDTree（autocmd 可以缩写为 au）
-autocmd VimEnter * NERDTree
-" 鼠标默认在右边
-wincmd w
-autocmd VimEnter * wincmd w
-" 自动退出
-autocmd BufEnter * if 0 == len(filter(range(1, winnr('$')), 'empty(getbufvar(winbufnr(v:val), "&bt"))')) | qa! | endif
+" autocmd VimEnter * NERDTree
+" " 鼠标默认在右边
+" wincmd w
+" autocmd VimEnter * wincmd w
+" " 自动退出
+" autocmd BufEnter * if 0 == len(filter(range(1, winnr('$')), 'empty(getbufvar(winbufnr(v:val), "&bt"))')) | qa! | endif
 
 " taglist
 let Tlist_Show_One_File = 1            "只显示当前文件的taglist，默认是显示>    多个
@@ -142,10 +142,6 @@ let Tlist_Ctags_Cmd='/usr/bin/ctags'  "设置ctags命令的位置
 nmap <F4> :Tlist<cr>        " 设置关闭和打开taglist窗口的快捷键
 
 " syntastic
-set statusline+=%#warningmsg#
-set statusline+=%{SyntasticStatuslineFlag()}
-set statusline+=%*
-
 let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
@@ -190,3 +186,9 @@ nmap <Leader>L <Plug>(easymotion-overwin-line)
 " Move to word
 map  <Leader>w <Plug>(easymotion-bd-w)
 nmap <Leader>w <Plug>(easymotion-overwin-w)
+
+let g:airline_powerline_fonts = 1
+nnoremap <C-f> :Ack<Space>-i<Space>
+if executable('ag')
+    let g:ackprg = 'ag --nogroup --nocolor --column'
+endif

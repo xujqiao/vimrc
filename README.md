@@ -15,6 +15,7 @@ jxuao's VIM config file
 * [A][a] - switch between .h and .cpp
 * [Tagbar][tagbar] - tagbar
 * [Ctrlp][ctrlp] - search file from project
+* [Ack][ack] - ack2
 
 ## Themes
 
@@ -39,6 +40,14 @@ Dependency
 
     sudo apt-get install ctags
 
+    // ag https://geoff.greer.fm/ag/
+    wget -c https://geoff.greer.fm/ag/releases/the_silver_searcher-2.1.0.tar.gz
+    tar -xzvf the_silver_searcher-2.1.0.tar.gz
+    cd the_silver_searcher-2.1.0/
+    ./configure
+    make
+    sudo make install
+
 Install the Plugins
 
     vim
@@ -51,6 +60,8 @@ Install the Plugins
 * F8 -> Toggle Tagbar
 * <leader>w -> find word
 * <leader>L -> jump to line
+* ctrl + p -> search files
+* ctrl + f -> search contents with ack
 
 ## Bonus
 
@@ -80,5 +91,6 @@ Install the Plugins
  [a]: https://github.com/vim-scripts/a.vim "a.vim"
  [tagbar]: https://github.com/majutsushi/tagbar "tagbar"
  [ctrlp]: https://github.com/kien/ctrlp.vim "ctrlp.vim"
+ [ack]: https://github.com/mileszs/ack.vim "ack.vim"
 
  [vimium]: https://chrome.google.com/webstore/search/vimium?utm_source=chrome-ntp-icon "vimium"
