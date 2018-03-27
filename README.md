@@ -9,13 +9,12 @@ jxuao's VIM config file
 * [NerdTree][nerdTree] - tree explorer files plugin
 * [Taglist][taglist] - taglist
 * [Airline][airline] - great status plugin
-* [YouCompleteMe][youCompleteMe] - most powerful auto complete tools
-* [QuickRun][quickRun] - run code like sublime Ctrl+B
 * [MultipleCursor][multipleCursor] - select the same parts like sublime Ctrl+D
-* [Jedi][jedi] - use for python completion
 * [EasyMotion][easyMotion] - very useful search tools like the plugin [Vimium][vimium] in Chrome
 * [AutoClose][autoClose] - pair of <> () [] {} and so on
-* [Fugitive][fugitive] - git for vim
+* [A][a] - switch between .h and .cpp
+* [Tagbar][tagbar] - tagbar
+* [Ctrlp][ctrlp] - search file from project
 
 ## Themes
 
@@ -49,7 +48,9 @@ Install the Plugins
 
 * F5 -> Toggle NerdTree file viewer
 * F4 -> Toggle Taglist
-* Ctrl+B -> Run the code
+* F8 -> Toggle Tagbar
+* <leader>w -> find word
+* <leader>L -> jump to line
 
 ## Bonus
 
@@ -66,12 +67,6 @@ Install the Plugins
 
 
 
-
-
-
-
-
-
  [solarized]: http://ethanschoonover.com/solarized "solarized"
 
  [vundle]: https://github.com/gmarik/Vundle.vim "vundle"
@@ -79,11 +74,11 @@ Install the Plugins
  [nerdTree]: https://github.com/scrooloose/nerdtree "nerdTree"
  [taglist]: https://github.com/vim-scripts/taglist.vim "taglist"
  [airline]: https://github.com/bling/vim-airline "airline"
- [youCompleteMe]: https://github.com/Valloric/YouCompleteMe "youCompleteMe"
- [quickRun]: https://github.com/thinca/vim-quickrun "quickRun"
  [multipleCursor]: https://github.com/terryma/vim-multiple-cursors "multiple-cursors"
- [autoClose]: https://github.com/Townk/vim-autoclose "autoClose"
- [fugitive]: https://github.com/tpope/vim-fugitive "fugitive"
- [jedi]: https://github.com/davidhalter/jedi "jedi"
  [easyMotion]: https://github.com/Lokaltog/vim-easymotion "easyMotion"
+ [autoClose]: https://github.com/Townk/vim-autoclose "autoClose"
+ [a]: https://github.com/vim-scripts/a.vim "a.vim"
+ [tagbar]: https://github.com/majutsushi/tagbar "tagbar"
+ [ctrlp]: https://github.com/kien/ctrlp.vim "ctrlp.vim"
+
  [vimium]: https://chrome.google.com/webstore/search/vimium?utm_source=chrome-ntp-icon "vimium"

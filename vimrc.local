@@ -18,17 +18,8 @@ filetype plugin indent on
 " => solarized begin
 " """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 syntax enable
-syntax on
-if has('gui_running')
-	set t_Co=16
-	let g:solarized_termcolors=16
-	set background=dark
-else
-	set t_Co=256
-	let g:solarized_termcolors=256
-	set background=light
-endif
-" colorscheme solarized
+set t_Co=256
+set background=light
 
 
 " """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
