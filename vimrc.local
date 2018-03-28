@@ -13,9 +13,8 @@ call vundle#end()
 
 filetype plugin indent on
 
-
 " """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" => solarized begin
+" => colortheme begin
 " """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 syntax enable
 set t_Co=256
@@ -39,7 +38,6 @@ nmap <leader>q :q!<cr>
 " font
 set guifont=Source\ Code\ Pro\ Semi-Bold
 
-
 " set tab for 4 spaces
 set smarttab
 set tabstop=4
@@ -47,12 +45,8 @@ set shiftwidth=4
 set expandtab
 set autoindent
 
-nmap <F8> :TagbarToggle<CR>
-
 " set paste and nopaste
 set pastetoggle=<F9>
-
-
 
 if has("autocmd")
     " When editing a file, always jump to the last cursor position
@@ -70,9 +64,6 @@ endif
 " set 7 lines to the cursor - when moving vertically using j/k
 set so=7
 
-" set ruler and command bar
-" set ruler
-" set cmdheight=2
 set laststatus=2
 
 " search setting
@@ -109,7 +100,6 @@ map <C-k> <C-W>k
 map <C-h> <C-W>h
 map <C-l> <C-W>l
 
-
 " window size
 nmap <Left> <C-W><
 nmap <Right> <C-W>>
@@ -119,27 +109,11 @@ nmap <Down> <C-W>-
 nmap <C-Left> gT
 nmap <C-Right> gt
 
-
 " """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Plugin configure
 " """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " nerdtree
 nmap <F5> :NERDTreeToggle<cr>
-" 在 vim 启动的时候默认开启 NERDTree（autocmd 可以缩写为 au）
-" autocmd VimEnter * NERDTree
-" " 鼠标默认在右边
-" wincmd w
-" autocmd VimEnter * wincmd w
-" " 自动退出
-" autocmd BufEnter * if 0 == len(filter(range(1, winnr('$')), 'empty(getbufvar(winbufnr(v:val), "&bt"))')) | qa! | endif
-
-" taglist
-let Tlist_Show_One_File = 1            "只显示当前文件的taglist，默认是显示>    多个
-let Tlist_Exit_OnlyWindow = 1          "如果taglist是最后一个窗口，则退出vim
-let Tlist_Use_Right_Window = 1         "在右侧窗口中显示taglist
-let Tlist_GainFocus_On_ToggleOpen = 1  "打开taglist时，光标保留在taglist窗口
-let Tlist_Ctags_Cmd='/usr/bin/ctags'  "设置ctags命令的位置
-nmap <F4> :Tlist<cr>        " 设置关闭和打开taglist窗口的快捷键
 
 " syntastic
 let g:syntastic_always_populate_loc_list = 1
@@ -163,8 +137,6 @@ nmap <Leader>ch :A<CR>
 " 子窗口中显示 *.cpp 或 *.h
 nmap <Leader>sch :AV<CR>
 
-let g:airline_powerline_fonts = 1 
-
 " ctrlp
 let g:ctrlp_map = '<c-p>' 
 let g:ctrlp_cmd = 'CtrlP'
@@ -187,8 +159,17 @@ nmap <Leader>L <Plug>(easymotion-overwin-line)
 map  <Leader>w <Plug>(easymotion-bd-w)
 nmap <Leader>w <Plug>(easymotion-overwin-w)
 
+" airline
 let g:airline_powerline_fonts = 1
-nnoremap <C-f> :Ack<Space>-i<Space>
+
+" ack
+nnoremap <C-f> :Ack!<Space>-i<Space>
 if executable('ag')
     let g:ackprg = 'ag --nogroup --nocolor --column'
 endif
+
+" tagbar
+nmap <F8> :TagbarToggle<CR>
+
+" 切换缓存文件
+nmap <C-g> :bNext<CR>
