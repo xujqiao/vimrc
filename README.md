@@ -34,15 +34,24 @@ Create link for vimrc, vimrc.local
 
 Dependency
 
-    sudo apt-get install ctags
+1. ctags
 
+```shell
+    sudo apt-get install ctags
+```
+
+2. ag
+
+```shell
     // ag https://geoff.greer.fm/ag/
     wget -c https://geoff.greer.fm/ag/releases/the_silver_searcher-2.1.0.tar.gz
     tar -xzvf the_silver_searcher-2.1.0.tar.gz
     cd the_silver_searcher-2.1.0/
+    sudo yum install -y pcre-devel zlib-devel xz-devel
     ./configure
     make
     sudo make install
+```
 
 Install the Plugins
 
