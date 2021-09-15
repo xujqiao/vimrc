@@ -11,59 +11,71 @@ call vundle#begin()
 source ~/.vim/vimrc.bundles
 call vundle#end()
 
-filetype plugin indent on
-
-" """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" => colortheme begin
-" """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-syntax enable
-set t_Co=256
-set background=light
-
-
 " """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => general
 " """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " set the line number
-set nu
+set number
+
+" color theme
+syntax enable
+set t_Co=256
+set background=light
 
 " more powerful backspacing
 set backspace=indent,eol,start
 
-" fast saving
-" the <leader> is backslash as default
-nmap <leader>w :w!<cr>
-nmap <leader>q :q!<cr>
-
 " font
 set guifont=Source\ Code\ Pro\ Semi-Bold
 
-" set tab for 4 spaces
-set smarttab
-set tabstop=4
-set shiftwidth=4
+" 使用空格来替换Tab"
 set expandtab
-set autoindent
+
+" 设置所有的Tab和缩进为4个空格"
+set tabstop=2
+
+" 设定<<和>>命令移动时的宽度为4"
+set shiftwidth=2
+
+" 使得按退格键时可以一次删除4个空格"
+set softtabstop=2
+set smarttab
+
+" 缩进，自动缩进（继承前一行的缩进）"
+" set autoindent 命令打开自动缩进，是下面配置的缩写
+" 可使用autoindent命令的简写，即“:set ai”和“:set noai”
+" 还可以使用“:set ai sw=4”在一个命令中打开缩进并设置缩进级别
+set ai
+set cindent
+
+" 智能缩进
+set si
+
+" 自动换行
+set wrap
+
+" 设置软宽度
+set sw=4
+
+" 行内替换
+set gdefault
+
+" cursorline draws a horizontal highlight (or underline, depending on your colorscheme) on the line your cursor is currently on
+set cursorline
+hi cursorline guibg=#00ff00
+hi CursorColumn guibg=#00ff00
+
+" load filetype-specific indent files
+filetype plugin indent on
+
+" redraw only when we need to.
+set lazyredraw
 
 " set paste and nopaste
 set pastetoggle=<F9>
 
-if has("autocmd")
-    " When editing a file, always jump to the last cursor position
-    autocmd BufReadPost *
-    \ if line("'\"") > 0 && line ("'\"") <= line("$") |
-    \   exe "normal g'\"" |
-    \ endif
-    " Set tabs and spaces for html, css and js
-    " autocmd BufNewFile,BufReadPost *.html, *htm, *.css, *.js set noexpandtab tabstop=2 shiftwidth=2
-endif
-
-" """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" => VIM user interface
-" """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " set 7 lines to the cursor - when moving vertically using j/k
 set so=7
-
 set laststatus=2
 
 " search setting
@@ -86,28 +98,47 @@ set nobackup
 set nowb
 set noswapfile
 
-" encoding
-set fileencodings=utf-8,ucs-bom,gb18030,gbk,gb2312,cp936 " vim probe the file with list of fileencodings
-set termencoding=utf-8 " terminal encoding
-set encoding=utf-8 " encoding of buffer and menu
+" 打开文件监视。如果在编辑过程中文件发生外部改变（比如被别的编辑器编辑了），就会发出提示。
+set autoread
 
-" """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" => Moving around, windows and buffers
-" """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" 如果行尾有多余的空格（包括 Tab 键），该配置将让这些空格显示成可见的小方块
+set listchars=tab:\|\ ,trail:■
+set list
+
+" 设置编码
+set encoding=utf-8
+set fencs=utf-8,ucs-bom,shift-jis,gb18030,gbk,gb2312,cp936
+
+"设置文件编码"
+set fileencodings=utf-8
+
+"设置终端编码"
+set termencoding=utf-8
+
+"设置语言编码"
+set langmenu=zh_CN.UTF-8
+set helplang=cn
+
+" 增强模式中的命令行自动完成操作
+set wildmenu
+
+" 显示标尺
+set ruler
+
 " smart way to move between windows
 map <C-j> <C-W>j
 map <C-k> <C-W>k
 map <C-h> <C-W>h
 map <C-l> <C-W>l
 
-" window size
-nmap <Left> <C-W><
-nmap <Right> <C-W>>
-nmap <Up> <C-W>+
-nmap <Down> <C-W>-
+if has("autocmd")
+    " When editing a file, always jump to the last cursor position
+    autocmd BufReadPost *
+    \ if line("'\"") > 0 && line ("'\"") <= line("$") |
+    \   exe "normal g'\"" |
+    \ endif
+endif
 
-nmap <C-Left> gT
-nmap <C-Right> gt
 
 " """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Plugin configure
@@ -142,22 +173,6 @@ let g:ctrlp_map = '<c-p>'
 let g:ctrlp_cmd = 'CtrlP'
 " 设置过滤不进行查找的后缀名 
 let g:ctrlp_custom_ignore = '\v[\/]\.(git|hg|svn|pyc)$' 
-
-" easy-motion
-" <Leader>f{char} to move to {char}
-map  <Leader>f <Plug>(easymotion-bd-f)
-nmap <Leader>f <Plug>(easymotion-overwin-f)
-
-" s{char}{char} to move to {char}{char}
-nmap s <Plug>(easymotion-overwin-f2)
-
-" Move to line
-map <Leader>L <Plug>(easymotion-bd-jk)
-nmap <Leader>L <Plug>(easymotion-overwin-line)
-
-" Move to word
-map  <Leader>w <Plug>(easymotion-bd-w)
-nmap <Leader>w <Plug>(easymotion-overwin-w)
 
 " airline
 let g:airline_powerline_fonts = 1
