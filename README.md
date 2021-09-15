@@ -1,4 +1,4 @@
-jxuao's VIM config file
+camxu's VIM config file
 ===============
 
 
@@ -20,43 +20,50 @@ jxuao's VIM config file
 ## Installation
 
 Backup your own vim files
-    
-    mv ~/.vim/ ~/.vim.bak/
+```bash
+mv ~/.vim/ ~/.vim.bak/
+```
 
 Clone this repository
 
-    git clone https://github.com/xujqiao/vimrc.git ~/.vim
-    git clone https://github.com/gmarik/Vundle.vim.git ~/.vim/bundle/Vundle.vim
+```bash
+git clone https://github.com/xujqiao/vimrc.git ~/.vim
+git clone https://github.com/gmarik/Vundle.vim.git ~/.vim/bundle/Vundle.vim
+```
 
 Create link for vimrc, vimrc.local
 
-    ln -s ~/.vim/vimrc.local ~/.vim/vimrc
+```bash
+ln -s ~/.vim/vimrc.local ~/.vim/vimrc
+```
 
 Dependency
 
 1. ctags
 
-```shell
-    sudo apt-get install ctags
+```bash
+sudo apt-get install ctags
 ```
 
 2. ag
 
-```shell
-    // ag https://geoff.greer.fm/ag/
-    wget -c https://geoff.greer.fm/ag/releases/the_silver_searcher-2.1.0.tar.gz
-    tar -xzvf the_silver_searcher-2.1.0.tar.gz
-    cd the_silver_searcher-2.1.0/
-    sudo yum install -y pcre-devel zlib-devel xz-devel
-    ./configure
-    make
-    sudo make install
+```bash
+// ag https://geoff.greer.fm/ag/
+wget -c https://geoff.greer.fm/ag/releases/the_silver_searcher-2.1.0.tar.gz
+tar -xzvf the_silver_searcher-2.1.0.tar.gz
+cd the_silver_searcher-2.1.0/
+sudo yum install -y pcre-devel zlib-devel xz-devel
+./configure
+make
+sudo make install
 ```
 
 Install the Plugins
 
-    vim
-    :PluginInstall
+```bash
+vim
+:PluginInstall
+```
 
 ## Key Bindings
 
@@ -68,6 +75,30 @@ Install the Plugins
 * ctrl + p -> search files
 * ctrl + f -> search contents with ack
 * ctrl + g -> switch next buffer which is previous buffer in airline
+
+## Bonus
+
+Fuzzy Search
+
+1. install
+
+```bash
+git clone --depth 1 https://github.com/junegunn/fzf.git
+./fzf/install
+source ~/.bashrc
+```
+
+2. usage
+
+```bash
+# cd
+cd **<tab>
+<input directory or file name>
+```
+
+3. result
+
+![screenshot][fuzzy_search_cd]
 
 
 [vundle]: https://github.com/gmarik/Vundle.vim "vundle"
@@ -84,3 +115,4 @@ Install the Plugins
 [bufferline]: https://github.com/bling/vim-bufferline "vim-bufferline.vim"
 
 [vimium]: https://chrome.google.com/webstore/search/vimium?utm_source=chrome-ntp-icon "vimium"
+[fuzzy_search_cd]: https://github.com/xujqiao/vimrc/raw/master/img/fuzzy_search_cd.gif "fuzzy_search_cd.gif"
