@@ -38,7 +38,7 @@ ln -s ~/.vim/vimrc.local ~/.vim/vimrc
 
 4. Install dependency
 
-* ag
+* `ag`
 
 ```bash
 // ag https://geoff.greer.fm/ag/
@@ -49,6 +49,14 @@ sudo yum install -y pcre-devel zlib-devel xz-devel
 ./configure
 make
 sudo make install
+```
+
+* `fuzzy search finder`
+
+```bash
+git clone --depth 1 https://github.com/junegunn/fzf.git
+./fzf/install
+source ~/.bashrc
 ```
 
 5. Install the Plugins
@@ -70,15 +78,7 @@ vim
 
 ## Bonus
 
-1. Fuzzy Search
-
-* install
-
-```bash
-git clone --depth 1 https://github.com/junegunn/fzf.git
-./fzf/install
-source ~/.bashrc
-```
+1. Fuzzy Search Finder
 
 * usage
 
@@ -87,8 +87,6 @@ source ~/.bashrc
 cd **<tab>
 <input directory or file name>
 ```
-
-* result
 
 ![screenshot][fuzzy_search_cd]
 
