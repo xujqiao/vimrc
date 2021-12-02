@@ -145,6 +145,10 @@ endif
 " """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " nerdtree
 nmap <F5> :NERDTreeToggle<cr>
+" 自动打开
+autocmd vimenter * NERDTree
+" 自动关闭
+autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 
 " syntastic
 let g:syntastic_always_populate_loc_list = 1
@@ -168,12 +172,6 @@ nmap <Leader>ch :A<CR>
 " 子窗口中显示 *.cpp 或 *.h
 nmap <Leader>sch :AV<CR>
 
-" ctrlp
-let g:ctrlp_map = '<c-p>' 
-let g:ctrlp_cmd = 'CtrlP'
-" 设置过滤不进行查找的后缀名 
-let g:ctrlp_custom_ignore = '\v[\/]\.(git|hg|svn|pyc)$' 
-
 " airline
 let g:airline_powerline_fonts = 1
 let g:airline#extensions#tabline#enabled = 1
@@ -189,9 +187,18 @@ endif
 
 " tagbar
 nmap <F8> :TagbarToggle<CR>
-" tags
-set tags=./tags;,tags
 
 " 切换缓存文件
 nmap <C-n> :bn<CR>
 nmap <C-b> :bp<CR>
+
+" fzf
+nmap <C-p> :Files ~/QQMail/<CR>
+nmap <C-r> :Rg ~/QQMail/<CR>
+
+" fzf 默认布局
+" - down / up / left / right
+let g:fzf_layout = { 'down': '~40%' }
+
+let &colorcolumn=join(range(121,999),",")
+highlight ColorColumn ctermbg=235 guibg=#808069

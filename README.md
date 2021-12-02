@@ -8,44 +8,37 @@ camxu's VIM config file
 * [Surround][surround] - quoting/parenthesizing made simple
 * [NerdTree][nerdTree] - tree explorer files plugin
 * [Airline][airline] - great status plugin
-* [MultipleCursor][multipleCursor] - select the same parts like sublime Ctrl+D
 * [EasyMotion][easyMotion] - very useful search tools like the plugin [Vimium][vimium] in Chrome
 * [AutoClose][autoClose] - pair of <> () [] {} and so on
 * [A][a] - switch between .h and .cpp
 * [Tagbar][tagbar] - tagbar
-* [Ctrlp][ctrlp] - search file from project
 * [Ack][ack] - ack2
 * [Bufferline][bufferline] - buffers in airline
+* [Fzf][fzf] - fuzzy search finder
 
 ## Installation
 
-Backup your own vim files
+1. Backup your own vim files
 ```bash
 mv ~/.vim/ ~/.vim.bak/
 ```
 
-Clone this repository
+2. Clone this repository
 
 ```bash
 git clone https://github.com/xujqiao/vimrc.git ~/.vim
 git clone https://github.com/gmarik/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 ```
 
-Create link for vimrc, vimrc.local
+3. Create link for vimrc, vimrc.local
 
 ```bash
 ln -s ~/.vim/vimrc.local ~/.vim/vimrc
 ```
 
-Dependency
+4. Install dependency
 
-1. ctags
-
-```bash
-sudo apt-get install ctags
-```
-
-2. ag
+* ag
 
 ```bash
 // ag https://geoff.greer.fm/ag/
@@ -58,7 +51,7 @@ make
 sudo make install
 ```
 
-Install the Plugins
+5. Install the Plugins
 
 ```bash
 vim
@@ -70,17 +63,16 @@ vim
 * F5 -> Toggle NerdTree file viewer
 * F4 -> Toggle Taglist
 * F8 -> Toggle Tagbar
-* \<leader\>w -> find word
-* \<leader\>L -> jump to line
 * ctrl + p -> search files
 * ctrl + f -> search contents with ack
-* ctrl + g -> switch next buffer which is previous buffer in airline
+* ctrl + g -> switch next buffer
+* ctrl + n -> switch preview buffer
 
 ## Bonus
 
-Fuzzy Search
+1. Fuzzy Search
 
-1. install
+* install
 
 ```bash
 git clone --depth 1 https://github.com/junegunn/fzf.git
@@ -88,7 +80,7 @@ git clone --depth 1 https://github.com/junegunn/fzf.git
 source ~/.bashrc
 ```
 
-2. usage
+* usage
 
 ```bash
 # cd
@@ -96,7 +88,7 @@ cd **<tab>
 <input directory or file name>
 ```
 
-3. result
+* result
 
 ![screenshot][fuzzy_search_cd]
 
@@ -105,14 +97,13 @@ cd **<tab>
 [surround]: https://github.com/tpope/vim-surround "surround"
 [nerdTree]: https://github.com/scrooloose/nerdtree "nerdTree"
 [airline]: https://github.com/bling/vim-airline "airline"
-[multipleCursor]: https://github.com/terryma/vim-multiple-cursors "multiple-cursors"
 [easyMotion]: https://github.com/Lokaltog/vim-easymotion "easyMotion"
 [autoClose]: https://github.com/Townk/vim-autoclose "autoClose"
 [a]: https://github.com/vim-scripts/a.vim "a.vim"
 [tagbar]: https://github.com/majutsushi/tagbar "tagbar"
-[ctrlp]: https://github.com/kien/ctrlp.vim "ctrlp.vim"
 [ack]: https://github.com/mileszs/ack.vim "ack.vim"
 [bufferline]: https://github.com/bling/vim-bufferline "vim-bufferline.vim"
+[fzf]: https://github.com/junegunn/fzf "fzf"
 
 [vimium]: https://chrome.google.com/webstore/search/vimium?utm_source=chrome-ntp-icon "vimium"
 [fuzzy_search_cd]: https://github.com/xujqiao/vimrc/raw/master/img/fuzzy_search_cd.gif "fuzzy_search_cd.gif"
