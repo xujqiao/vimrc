@@ -15,6 +15,7 @@ camxu's VIM config file
 * [Ack][ack] - ack2
 * [Bufferline][bufferline] - buffers in airline
 * [Fzf][fzf] - fuzzy search finder
+* [Git][git] - fugitive
 
 ## Installation
 
@@ -102,6 +103,8 @@ cd **<tab>
 [ack]: https://github.com/mileszs/ack.vim "ack.vim"
 [bufferline]: https://github.com/bling/vim-bufferline "vim-bufferline.vim"
 [fzf]: https://github.com/junegunn/fzf "fzf"
+[git]: https://github.com/tpope/vim-fugitive "git"
 
 [vimium]: https://chrome.google.com/webstore/search/vimium?utm_source=chrome-ntp-icon "vimium"
 [fuzzy_search_cd]: https://github.com/xujqiao/vimrc/raw/master/img/fuzzy_search_cd.gif "fuzzy_search_cd.gif"
+

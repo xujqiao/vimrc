@@ -144,7 +144,7 @@ endif
 " => Plugin configure
 " """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " nerdtree
-nmap <F5> :NERDTreeToggle<cr>
+nmap <F5> :NERDTreeFind<cr>
 " 自动打开
 autocmd vimenter * NERDTree
 " 自动关闭
@@ -180,7 +180,7 @@ let g:airline#extensions#whitespace#enabled = 0
 let g:airline#extensions#whitespace#symbol = '!'
 
 " ack
-nnoremap <C-f> :Ack!<Space>-i<Space>
+nnoremap <C-f> :Ack!<Space>-i<Space><cword>
 if executable('ag')
     let g:ackprg = 'ag --nogroup --nocolor --column'
 endif
@@ -194,7 +194,8 @@ nmap <C-b> :bp<CR>
 
 " fzf
 nmap <C-p> :Files ~/QQMail/<CR>
-nmap <C-r> :Rg ~/QQMail/<CR>
+nmap <leader>p :Files <CR>
+nmap <C-r> :Ag <CR>
 
 " fzf 默认布局
 " - down / up / left / right
@@ -202,3 +203,16 @@ let g:fzf_layout = { 'down': '~40%' }
 
 let &colorcolumn=join(range(121,999),",")
 highlight ColorColumn ctermbg=235 guibg=#808069
+highlight Search ctermbg=yellow ctermfg=black
+" highlight DiffAdd    cterm=bold ctermfg=10 ctermbg=17 gui=none guifg=bg guibg=Red
+" highlight DiffDelete cterm=bold ctermfg=10 ctermbg=17 gui=none guifg=bg guibg=Red
+" highlight DiffChange cterm=bold ctermfg=10 ctermbg=17 gui=none guifg=bg guibg=Red
+" highlight DiffText   cterm=bold ctermfg=10 ctermbg=88 gui=none guifg=bg guibg=Red
+" 新增的行
+hi DiffAdd    ctermbg=235  ctermfg=108  guibg=#262626 guifg=#87af87 cterm=reverse gui=reverse
+" 变化的行
+hi DiffChange ctermbg=235  ctermfg=103  guibg=#262626 guifg=#8787af cterm=reverse gui=reverse
+" 删除的行
+hi DiffDelete ctermbg=235  ctermfg=131  guibg=#262626 guifg=#af5f5f cterm=reverse gui=reverse
+" 变化的文字
+hi DiffText   ctermbg=235  ctermfg=208  guibg=#262626 guifg=#ff8700 cterm=reverse gui=reverse
