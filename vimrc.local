@@ -145,6 +145,7 @@ endif
 " """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " nerdtree
 nmap <F5> :NERDTreeFind<cr>
+nmap <F4> :NERDTreeToggle<cr>
 " 自动打开
 autocmd vimenter * NERDTree
 " 自动关闭
