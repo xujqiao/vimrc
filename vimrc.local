@@ -20,7 +20,8 @@ set number
 " color theme
 syntax enable
 set t_Co=256
-set background=light
+set background=dark
+colorscheme seoul256
 
 " more powerful backspacing
 set backspace=indent,eol,start
