@@ -199,6 +199,9 @@ nmap <C-p> :Files ~/QQMail/<CR>
 nmap <leader>p :Files <CR>
 nmap <C-r> :Ag <CR>
 
+" terminal
+nmap <C-t> :terminal<CR>
+
 " fzf 默认布局
 " - down / up / left / right
 let g:fzf_layout = { 'down': '~40%' }

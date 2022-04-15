@@ -11,11 +11,11 @@ camxu's VIM config file
 * [EasyMotion][easyMotion] - very useful search tools like the plugin [Vimium][vimium] in Chrome
 * [AutoClose][autoClose] - pair of <> () [] {} and so on
 * [A][a] - switch between .h and .cpp
-* [Tagbar][tagbar] - tagbar
 * [Ack][ack] - ack2
 * [Bufferline][bufferline] - buffers in airline
 * [Fzf][fzf] - fuzzy search finder
 * [Git][git] - fugitive
+* [Seoul256][seoul256] - seoul256 color
 
 ## Installation
 
@@ -76,6 +76,7 @@ vim
 * ctrl + f -> search contents with ack
 * ctrl + g -> switch next buffer
 * ctrl + n -> switch preview buffer
+* ctrl + t -> open terminal
 
 ## Bonus
 
@@ -104,6 +105,7 @@ cd **<tab>
 [bufferline]: https://github.com/bling/vim-bufferline "vim-bufferline.vim"
 [fzf]: https://github.com/junegunn/fzf "fzf"
 [git]: https://github.com/tpope/vim-fugitive "git"
+[seoul256]: https://github.com/junegunn/seoul256.vim "seoul256"
 
 [vimium]: https://chrome.google.com/webstore/search/vimium?utm_source=chrome-ntp-icon "vimium"
 [fuzzy_search_cd]: https://github.com/xujqiao/vimrc/raw/master/img/fuzzy_search_cd.gif "fuzzy_search_cd.gif"
