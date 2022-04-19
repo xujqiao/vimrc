@@ -8,6 +8,7 @@ camxu's VIM config file
 * [Surround][surround] - quoting/parenthesizing made simple
 * [NerdTree][nerdTree] - tree explorer files plugin
 * [Airline][airline] - great status plugin
+* [Tagbar][tagbar] - tagbar
 * [EasyMotion][easyMotion] - very useful search tools like the plugin [Vimium][vimium] in Chrome
 * [AutoClose][autoClose] - pair of <> () [] {} and so on
 * [A][a] - switch between .h and .cpp
@@ -38,6 +39,12 @@ ln -s ~/.vim/vimrc.local ~/.vim/vimrc
 ```
 
 4. Install dependency
+
+* `ctags`
+
+```bash
+sudo yum install ctags
+```
 
 * `ag`
 
