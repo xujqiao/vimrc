@@ -79,9 +79,10 @@ vim
 * F5 -> Toggle NerdTree file viewer
 * F4 -> Toggle Taglist
 * F8 -> Toggle Tagbar
-* ctrl + p -> search files
+* ctrl + p -> search local files
+* ctrl + g -> search home files
 * ctrl + f -> search contents with ack
-* ctrl + g -> switch next buffer
+* ctrl + b -> switch next buffer
 * ctrl + n -> switch preview buffer
 * ctrl + t -> open terminal
 
@@ -94,7 +95,7 @@ vim
 ```bash
 # cd
 cd **<tab>
-<input directory or file name>
+<directory name>
 ```
 
 ![screenshot][fuzzy_search_cd]
