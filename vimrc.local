@@ -125,6 +125,8 @@ set wildmenu
 
 " 显示标尺
 set ruler
+set cursorline
+set cursorcolumn
 
 " smart way to move between windows
 map <C-j> <C-W>j
@@ -193,6 +195,7 @@ nmap <F8> :TagbarToggle<CR>
 " 切换缓存文件
 nmap <C-n> :bn<CR>
 nmap <C-b> :bp<CR>
+nmap <C-o> :Buffers<CR>
 
 " fzf
 nmap <C-g> :Files ~/QQMail/<CR>
@@ -201,7 +204,7 @@ nmap <C-p> :Files <CR>
 nmap <C-r> :Ag <CR>
 
 " terminal
-nmap <C-t> :terminal<CR>
+" nmap <C-t> :terminal<CR>
 
 " fzf 默认布局
 " - down / up / left / right
