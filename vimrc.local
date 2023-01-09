@@ -1,3 +1,4 @@
+scriptencoding utf-8
 " use vim syntax
 set nocompatible
 
@@ -72,9 +73,6 @@ filetype plugin indent on
 " redraw only when we need to.
 set lazyredraw
 
-" set paste and nopaste
-set pastetoggle=<F9>
-
 " set 7 lines to the cursor - when moving vertically using j/k
 set so=7
 set laststatus=2
@@ -134,6 +132,7 @@ map <C-k> <C-W>k
 map <C-h> <C-W>h
 map <C-l> <C-W>l
 
+
 if has("autocmd")
     " When editing a file, always jump to the last cursor position
     autocmd BufReadPost *
@@ -147,8 +146,8 @@ endif
 " => Plugin configure
 " """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " nerdtree
-nmap <F5> :NERDTreeFind<cr>
-nmap <F4> :NERDTreeToggle<cr>
+nmap <Leader>tree :NERDTreeFind<cr>
+" nmap <F4> :NERDTreeToggle<cr>
 " 自动打开
 " autocmd vimenter * NERDTree
 " 自动关闭
@@ -184,27 +183,24 @@ let g:airline#extensions#whitespace#enabled = 0
 let g:airline#extensions#whitespace#symbol = '!'
 
 " ack
-nnoremap <C-f> :Ack!<Space>-i<Space><cword>
+nnoremap <Leader>s :Ack!<Space>-i<Space>
+nnoremap <Leader>f :Ack!<Space>-i<Space><cword>
 if executable('ag')
     let g:ackprg = 'ag --nogroup --nocolor --column'
 endif
 
-" tagbar
-nmap <F8> :TagbarToggle<CR>
+"  tagbar
+nmap <Leader>tag :TagbarToggle<CR>
 
 " 切换缓存文件
 nmap <C-n> :bn<CR>
 nmap <C-b> :bp<CR>
-nmap <C-o> :Buffers<CR>
 
 " fzf
-nmap <C-g> :Files ~/QQMail/<CR>
-" nmap <leader>p :Files <CR>
-nmap <C-p> :Files <CR>
-nmap <C-r> :Ag <CR>
+nmap <Leader>g :Files ~/QQMail/<CR>
+nmap <Leader>p :Files<CR>
+nmap <C-p> :Buffers<CR>
 
-" terminal
-" nmap <C-t> :terminal<CR>
 
 " fzf 默认布局
 " - down / up / left / right
@@ -225,3 +221,46 @@ hi DiffChange ctermbg=235  ctermfg=103  guibg=#262626 guifg=#8787af cterm=revers
 hi DiffDelete ctermbg=235  ctermfg=131  guibg=#262626 guifg=#af5f5f cterm=reverse gui=reverse
 " 变化的文字
 hi DiffText   ctermbg=235  ctermfg=208  guibg=#262626 guifg=#ff8700 cterm=reverse gui=reverse
+
+" YouCompleteMe 的配置
+" Enable debugging
+let g:ycm_keep_logfiles = 1
+let g:ycm_log_level = 'debug'
+
+" If the base settings don't repro, paste your existing config for YCM only, here:
+" let g:ycm_....
+
+" Load YCM (only)
+let &rtp .= ',' . expand( '<sfile>:p:h' )
+filetype plugin indent on
+
+" Let clangd fully control code completion
+let g:ycm_clangd_uses_ycmd_caching = 0
+" Use installed clangd, not YCM-bundled clangd which doesn't get updates.
+
+" 改成你自己的 clangd 路径：
+let g:ycm_clangd_binary_path = "/usr/local/clangd/bin/clangd"
+let g:ycm_confirm_extra_conf = 0
+let g:ycm_max_diagnostics_to_display = 50
+
+" 一些传给 clangd 的命令行参数
+let g:ycm_clangd_args = [ "--background-index", "-j=16", "--completion-style=detailed", "--header-insertion=iwyu", "--pch-storage=memory", "--cross-file-rename", "--enable-config", "--fallback-style=Google", "--pretty", "--suggest-missing-includes"]
+
+" let g:ycm_enable_inlay_hints = 1
+" let g:ycm_clear_inlay_hints_in_insert_mode = 1
+
+" Apply YCM FixIt，把 F9 按键映射成 YcmCompleter FixIt 命令
+map <F9> :YcmCompleter FixIt<CR>
+map <F10> :YcmCompleter GoTo<CR>
+
+" 让Vim的补全菜单行为与一般IDE一致
+set completeopt=longest,menu
+" 离开插入模式后自动关闭预览窗口
+autocmd InsertLeave * if pumvisible() == 0|pclose|endif
+" 回车即选中当前项
+inoremap <expr> <CR>       pumvisible() ? "\<C-y>" : "\<CR>"
+"上下左右键的行为 会显示其他信息
+inoremap <expr> <Down>     pumvisible() ? "\<C-n>" : "\<Down>"
+inoremap <expr> <Up>       pumvisible() ? "\<C-p>" : "\<Up>"
+inoremap <expr> <PageDown> pumvisible() ? "\<PageDown>\<C-p>\<C-n>" : "\<PageDown>"
+inoremap <expr> <PageUp>   pumvisible() ? "\<PageUp>\<C-p>\<C-n>" : "\<PageUp>"
