@@ -197,7 +197,6 @@ nmap <C-n> :bn<CR>
 nmap <C-b> :bp<CR>
 
 " fzf
-nmap <Leader>g :Files ~/QQMail/<CR>
 nmap <Leader>p :Files<CR>
 nmap <C-p> :Buffers<CR>
 
@@ -250,8 +249,9 @@ let g:ycm_clangd_args = [ "--background-index", "-j=16", "--completion-style=det
 " let g:ycm_clear_inlay_hints_in_insert_mode = 1
 
 " Apply YCM FixIt，把 F9 按键映射成 YcmCompleter FixIt 命令
-map <F9> :YcmCompleter FixIt<CR>
-map <F10> :YcmCompleter GoTo<CR>
+nmap <Leader>gf :YcmCompleter FixIt<CR>
+nmap <Leader>gp :YcmCompleter GoToImplementation<CR>
+nmap <Leader>gd :YcmCompleter GoToDefinition<CR>
 
 " 让Vim的补全菜单行为与一般IDE一致
 set completeopt=longest,menu
