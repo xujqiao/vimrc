@@ -17,6 +17,7 @@ camxu's VIM config file
 * [Fzf][fzf] - fuzzy search finder
 * [Git][git] - fugitive
 * [Seoul256][seoul256] - seoul256 color
+* [YCM][ycm] -- YouCompleteMe
 
 ## Installation
 
@@ -46,6 +47,7 @@ ln -s ~/.vim/vimrc.local ~/.vim/vimrc
 sudo yum install ctags
 ```
 
+
 * `ag`
 
 ```bash
@@ -59,12 +61,33 @@ make
 sudo make install
 ```
 
-* `fuzzy search finder`
+* `fzf`
 
 ```bash
 git clone --depth 1 https://github.com/junegunn/fzf.git
 ./fzf/install
 source ~/.bashrc
+```
+
+* `ycm`
+
+```bash
+# 1. upgrade vim with py3
+git clone https://github.com/vim/vim
+cd vim;
+# 要打开 vim 的 python3 支持
+./configure --enable-python3interp=yes --prefix=xxxx
+make install -j16
+
+# 2. download clangd binary file
+visit https://github.com/clangd/clangd/releases/latest get latest binary
+unzip to /path/to/clangd
+
+# 3. vim PluginInstall
+
+# 4. install ycm with clangd
+cd ~/.vim/bundle/YouCompleteMe
+./install.py --clangd-completer
 ```
 
 5. Install the Plugins
@@ -76,15 +99,10 @@ vim
 
 ## Key Bindings
 
-* F5 -> Toggle NerdTree file viewer
-* F4 -> Toggle Taglist
-* F8 -> Toggle Tagbar
-* ctrl + p -> search local files
-* ctrl + g -> search home files
-* ctrl + f -> search contents with ack
+* leader + p -> search local files
+* leader + f -> search contents with ack
 * ctrl + b -> switch next buffer
 * ctrl + n -> switch preview buffer
-* ctrl + t -> open terminal
 
 ## Bonus
 
@@ -114,6 +132,7 @@ cd **<tab>
 [fzf]: https://github.com/junegunn/fzf "fzf"
 [git]: https://github.com/tpope/vim-fugitive "git"
 [seoul256]: https://github.com/junegunn/seoul256.vim "seoul256"
+[ycm]: https://github.com/ycm-core/YouCompleteMe "ycm"
 
 [vimium]: https://chrome.google.com/webstore/search/vimium?utm_source=chrome-ntp-icon "vimium"
 [fuzzy_search_cd]: https://github.com/xujqiao/vimrc/raw/master/img/fuzzy_search_cd.gif "fuzzy_search_cd.gif"

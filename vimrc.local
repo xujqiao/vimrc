@@ -17,6 +17,7 @@ call vundle#end()
 " """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " set the line number
 set number
+set relativenumber
 
 " color theme
 syntax enable
@@ -198,7 +199,7 @@ nmap <C-b> :bp<CR>
 
 " fzf
 nmap <Leader>p :Files<CR>
-nmap <C-p> :Buffers<CR>
+nmap <Leader>b :Buffers<CR>
 
 
 " fzf 默认布局
