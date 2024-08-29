@@ -1,6 +1,8 @@
-camxu's VIM config file
+camxu's config file
 ===============
 
+
+# VIM
 
 ## Bundle Plugins
 
@@ -19,7 +21,7 @@ camxu's VIM config file
 * [Seoul256][seoul256] - seoul256 color
 * [YCM][ycm] -- YouCompleteMe
 
-## Installation
+## Install
 
 1. Backup your own vim files
 ```bash
@@ -104,20 +106,6 @@ vim
 * ctrl + b -> switch next buffer
 * ctrl + n -> switch preview buffer
 
-## Bonus
-
-1. Fuzzy Search Finder
-
-* usage
-
-```bash
-# cd
-cd **<tab>
-<directory name>
-```
-
-![screenshot][fuzzy_search_cd]
-
 
 [vundle]: https://github.com/gmarik/Vundle.vim "vundle"
 [surround]: https://github.com/tpope/vim-surround "surround"
@@ -133,7 +121,66 @@ cd **<tab>
 [git]: https://github.com/tpope/vim-fugitive "git"
 [seoul256]: https://github.com/junegunn/seoul256.vim "seoul256"
 [ycm]: https://github.com/ycm-core/YouCompleteMe "ycm"
-
 [vimium]: https://chrome.google.com/webstore/search/vimium?utm_source=chrome-ntp-icon "vimium"
-[fuzzy_search_cd]: https://github.com/xujqiao/vimrc/raw/master/img/fuzzy_search_cd.gif "fuzzy_search_cd.gif"
 
+
+# Zsh
+
+## Plugins
+
+* [Fzf-Tab][fzf-tab] - Replace zsh's default completion selection menu with fzf!
+* [Zsh-Syntax-Highlighting][zsh-syntax-highlighting] - Fish shell-like syntax highlighting for Zsh.
+* [Zsh-Autosuggestions][zsh-autosuggestions] - Fish-like fast/unobtrusive autosuggestions for zsh.
+
+## Install
+
+1. install zsh and oh-my-zsh
+
+...
+
+2. install plugins
+
+```bash
+# fzf-tab
+git clone https://github.com/Aloxaf/fzf-tab ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/fzf-tab
+
+# zsh-syntax-highlighting
+git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
+
+# zsh-autosuggestions
+git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
+
+# 在.zshrc中plugins里添加括号内的插件
+plugins=(git fzf-tab zsh-syntax-highlighting zsh-autosuggestions)
+```
+
+[fzf-tab]: https://github.com/Aloxaf/fzf-tab "fzf-tab"
+[zsh-syntax-highlighting]: https://github.com/zsh-users/zsh-syntax-highlighting "zsh-syntax-highlighting"
+[zsh-autosuggestions]: https://github.com/zsh-users/zsh-autosuggestions "zsh-autosuggestions"
+
+# Tmux
+
+## Install
+
+```bash
+ln -s ${HOME}/.vim/tmux.conf ${HOME}/.tmux.conf
+```
+
+
+===============
+## Bonus
+
+1. Fuzzy Search Finder
+
+* usage
+
+```bash
+# cd
+cd **<tab>
+<directory name>
+```
+
+![screenshot][fuzzy_search_cd]
+
+
+[fuzzy_search_cd]: https://github.com/xujqiao/vimrc/raw/master/img/fuzzy_search_cd.gif "fuzzy_search_cd.gif"
