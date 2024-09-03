@@ -89,7 +89,22 @@ unzip to /path/to/clangd
 
 # 4. install ycm with clangd
 cd ~/.vim/bundle/YouCompleteMe
-./install.py --clangd-completer
+# 使用python3.6以上版本
+python3 install.py --clangd-completer
+
+
+# 5. 修改vimrc.local
+let g:ycm_clangd_binary_path = "/path/to/clangd"
+
+
+# 6. 生成compile_commands.json
+pb: pb :mmXXX --download-genfiles  --skip-ipath  --compile-command-query=--merge    --gcc-version=gcc7 --os-name=tlinux2
+cmake: cmake -DCMAKE_EXPORT_COMPILE_COMMANDS=1
+make: bear 编译命令
+
+
+# 7. 设置依赖文件
+ln -s ~/.vim/clangd.yml /your/project/home/.clangd
 ```
 
 5. Install the Plugins
