@@ -26,6 +26,7 @@ camxu's config file
 1. Backup your own vim files
 ```bash
 mv ~/.vim/ ~/.vim.bak/
+mv ~/.vimrc ~/.vimrc.bak
 ```
 
 2. Clone this repository
@@ -165,7 +166,9 @@ git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:
 # zsh-autosuggestions
 git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
 
-# 在.zshrc中plugins里添加括号内的插件
+# .zshrc
+ZSH_THEME="jonathan"
+CASE_SENSITIVE="true"
 plugins=(git fzf-tab zsh-syntax-highlighting zsh-autosuggestions)
 ```
 
@@ -196,6 +199,5 @@ cd **<tab>
 ```
 
 ![screenshot][fuzzy_search_cd]
-
 
 [fuzzy_search_cd]: https://github.com/xujqiao/vimrc/raw/master/img/fuzzy_search_cd.gif "fuzzy_search_cd.gif"
