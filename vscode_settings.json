@@ -1,0 +1,34 @@
+{
+    "git.autofetch": true,
+    "security.promptForRemoteFileProtocolHandling": false,
+    "gitlens.ai.experimental.model": "openai:gpt-4o",
+    "cmake.pinnedCommands": [
+        "workbench.action.tasks.configureTaskRunner",
+        "workbench.action.tasks.runTask"
+    ],
+    "security.workspace.trust.untrustedFiles": "open",
+    "gongfeng.copilot.enableAutoCompletions": false,
+    "cmake.showOptionsMovedNotification": false,
+    "files.autoGuessEncoding": true,
+    "editor.fontSize": 14,
+    "debug.console.fontSize": 14,
+    "terminal.integrated.fontSize": 14,
+    "git.blame.editorDecoration.enabled": true,
+    "git.openRepositoryInParentFolders": "always",
+    "editor.lineNumbers": "relative",
+    "editor.renderWhitespace": "all",
+    "editor.renderLineHighlight": "all",
+    "editor.rulers": [
+        120
+    ],
+    "editor.detectIndentation": false,
+    "editor.tabSize": 2,
+    "workbench.editor.wrapTabs": true,
+    "gitlens.currentLine.enabled": false,
+    "workbench.colorTheme": "Visual Studio 2017 Dark - C++",
+    "remote.autoForwardPortsSource": "hybrid",
+    "git.confirmSync": false,
+    "editor.dropIntoEditor.preferences": [],
+    "window.autoDetectColorScheme": false,
+    "editor.fontLigatures": false
+}
